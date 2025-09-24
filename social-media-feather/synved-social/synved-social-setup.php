@@ -58,15 +58,12 @@ function synved_social_provider_settings() {
 					'set'     => $display_set,
 					'label'   => sprintf(
 					/* translators: %s is the Provider Label. */
-						__( '%s Service', 'social-media-feather' ),
+						'%s Service',
 						$provider_label
 					),
 					'tip'     => sprintf(
 					/* translators: %s is the Provider Label. */
-						__(
-							'Decides for what types of services %s will be used by default',
-							'social-media-feather'
-						),
+						'Decides for what types of services %s will be used by default',
 						$provider_label
 					),
 				),
@@ -82,15 +79,12 @@ function synved_social_provider_settings() {
 					$provider_name . '_share_link'  => array(
 						'label' => sprintf(
 						/* translators: %s is the Provider Label. */
-							__( '%s Share Link', 'social-media-feather' ),
+							'%s Share Link',
 							$provider_label
 						),
 						'tip'   => sprintf(
 						/* translators: %s is the Provider Label. */
-							__(
-								'The link used by default for sharing content on %s. <b>Note: this generally doesn\'t need to be changed, only change it if you know what you\'re doing.</b>',
-								'social-media-feather'
-							),
+							'The link used by default for sharing content on %s. <b>Note: this generally doesn\'t need to be changed, only change it if you know what you\'re doing.</b>',
 							$provider_label
 						),
 						'hint'  => $share_item['link'],
@@ -98,15 +92,12 @@ function synved_social_provider_settings() {
 					$provider_name . '_share_title' => array(
 						'label' => sprintf(
 						/* translators: %s is the Provider Label. */
-							__( '%s Share Title', 'social-media-feather' ),
+							'%s Share Title',
 							$provider_label
 						),
 						'tip'   => sprintf(
 						/* translators: %s is the Provider Label. */
-							__(
-								'The title used by default for the %s share button (a standard one will be used if left empty)',
-								'social-media-feather'
-							),
+							'The title used by default for the %s share button (a standard one will be used if left empty)',
 							$provider_label
 						),
 						'hint'  => $share_item['title'],
@@ -124,15 +115,12 @@ function synved_social_provider_settings() {
 					$provider_name . '_follow_link'  => array(
 						'label' => sprintf(
 						/* translators: %s is the Provider Label. */
-							__( '%s Follow Link', 'social-media-feather' ),
+							'%s Follow Link',
 							$provider_label
 						),
 						'tip'   => sprintf(
 						/* translators: %1$s is the Provider Label. */
-							__(
-								'The link used by default for following you on %1$s. Change this to point to your own social profile page on %1$s.',
-								'social-media-feather'
-							),
+							'The link used by default for following you on %1$s. Change this to point to your own social profile page on %1$s.',
 							$provider_label
 						),
 						'hint'  => $follow_item['link'],
@@ -140,15 +128,12 @@ function synved_social_provider_settings() {
 					$provider_name . '_follow_title' => array(
 						'label' => sprintf(
 						/* translators: %1$s is the Provider Label. */
-							__( '%s Follow Title', 'social-media-feather' ),
+							'%s Follow Title',
 							$provider_label
 						),
 						'tip'   => sprintf(
 						/* translators: %1$s is the Provider Label. */
-							__(
-								'The title used by default for the %s follow button (a standard one will be used if left empty)',
-								'social-media-feather'
-							),
+							'The title used by default for the %s follow button (a standard one will be used if left empty)',
 							$provider_label
 						),
 						'hint'  => $follow_item['title'],
@@ -172,101 +157,71 @@ $synved_social_options = array(
 		'render-fragment' => 'synved_social_page_render_fragment',
 		'sections'        => array(
 			'section_general'           => array(
-				'label'    => __( 'General Settings', 'social-media-feather' ),
-				'tip'      => __( 'Settings affecting the general behaviour of the plugin', 'social-media-feather' ),
+				'label'    => 'General Settings',
+				'tip'      => 'Settings affecting the general behaviour of the plugin',
 				'settings' => array(
 					'use_shortlinks'           => array(
 						'default' => false,
-						'label'   => __( 'Use Shortlinks', 'social-media-feather' ),
-						'tip'     => __(
-							'Allows for shortened URLs to be used when sharing content if a shortening plugin is installed',
-							'social-media-feather'
-						),
+						'label'   => 'Use Shortlinks',
+						'tip'     => 	'Allows for shortened URLs to be used when sharing content if a shortening plugin is installed',
 					),
 					'share_full_url'           => array(
 						'default' => false,
-						'label'   => __( 'Share Full URL', 'social-media-feather' ),
-						'tip'     => __(
-							'Determines whether to always share the full URL or just the post permalink. You can override this for individual posts by setting the "synved_social_share_full_url" custom field to either "yes" or "no", case sensitive',
-							'social-media-feather'
-						),
+						'label'   => 'Share Full URL',
+						'tip'     => 	'Determines whether to always share the full URL or just the post permalink. You can override this for individual posts by setting the "synved_social_share_full_url" custom field to either "yes" or "no", case sensitive',
 					),
 					'layout_rtl'               => array(
 						'default' => false,
-						'label'   => __( 'Right To Left Layout', 'social-media-feather' ),
-						'tip'     => __(
-							'Check this option if you have a right-to-left site layout and icons show spacing issues',
-							'social-media-feather'
-						),
+						'label'   => 'Right To Left Layout',
+						'tip'     => 	'Check this option if you have a right-to-left site layout and icons show spacing issues',
 					),
 					'shortcode_widgets'        => array(
 						'default' => true,
-						'label'   => __( 'Shortcodes In Widgets', 'social-media-feather' ),
-						'tip'     => __( 'Allow shortcodes in Text widgets', 'social-media-feather' ),
+						'label'   => 'Shortcodes In Widgets',
+						'tip'     => 'Allow shortcodes in Text widgets',
 					),
 					'show_credit'              => array(
 						'default' => false,
-						'label'   => __( 'Show Credit', 'social-media-feather' ),
-						'tip'     => __(
-							'Display a small icon with a link to the Social Media Feather page',
-							'social-media-feather'
-						),
+						'label'   => 'Show Credit',
+						'tip'     => 	'Display a small icon with a link to the Social Media Feather page',
 					),
 					'share_message_default'    => array(
-						'default' => __( 'Hey check this out', 'social-media-feather' ),
-						'label'   => __( 'Default Message', 'social-media-feather' ),
-						'tip'     => __(
-							'Specify the default message to use when sharing content, this is what gets replaced into the %%message%% variable',
-							'social-media-feather'
-						),
+						'default' => 'Hey check this out',
+						'label'   => 'Default Message',
+						'tip'     => 	'Specify the default message to use when sharing content, this is what gets replaced into the %%message%% variable',
 					),
 					'fb_app_id'                => array(
 						'default' => '',
-						'label'   => __( 'Facebook App ID', 'social-media-feather' ),
+						'label'   => 'Facebook App ID',
 					),
 					'accepted_sharethis_terms' => array(
 						'type'   => 'custom',
-						'label'  => __( 'Terms of Service', 'social-media-feather' ),
-						'tip'    => __(
-							'Accept or decline <a target="_blank" href="https://www.sharethis.com/terms/">ShareThis Terms of Service</a> and <a target="_blank" href="https://www.sharethis.com/privacy/">Privacy Notice</a>',
-							'social-media-feather'
-						),
+						'label'  => 'Terms of Service',
+						'tip'    => 	'Accept or decline <a target="_blank" href="https://www.sharethis.com/terms/">ShareThis Terms of Service</a> and <a target="_blank" href="https://www.sharethis.com/privacy/">Privacy Notice</a>',
 						'render' => 'synved_social_accept_terms_switch',
 					),
 				),
 			),
 
 			'section_automatic_display' => array(
-				'label'    => __( 'Automatic Display', 'social-media-feather' ),
-				'tip'      => __(
-					'Settings affecting automating appending of social buttons to post contents',
-					'social-media-feather'
-				),
+				'label'    => 'Automatic Display',
+				'tip'      => 'Settings affecting automating appending of social buttons to post contents',
 				'settings' => array(
 					'automatic_share'               => array(
 						'default' => false,
-						'label'   => __( 'Display Sharing Buttons', 'social-media-feather' ),
-						'tip'     => __(
-							'Tries to automatically append sharing buttons to your posts (disable for specific posts by setting custom field synved_social_exclude or synved_social_exclude_share to "yes", case sensitive)',
-							'social-media-feather'
-						),
+						'label'   => 'Display Sharing Buttons',
+						'tip'     => 	'Tries to automatically append sharing buttons to your posts (disable for specific posts by setting custom field synved_social_exclude or synved_social_exclude_share to "yes", case sensitive)',
 					),
 					'automatic_share_position'      => array(
 						'default' => 'after_post',
 						'set'     => 'after_post=After Post,before_post=Before Post,after_before_post=After and Before Post',
-						'label'   => __( 'Share Buttons Position', 'social-media-feather' ),
-						'tip'     => __(
-							'Select where the sharing buttons should be placed. Note: placing buttons Before Post might not work in all themes.',
-							'social-media-feather'
-						),
+						'label'   => 'Share Buttons Position',
+						'tip'     => 	'Select where the sharing buttons should be placed. Note: placing buttons Before Post might not work in all themes.',
 					),
 					'automatic_share_single'        => array(
 						'default' => false,
-						'label'   => __( 'Sharing Single Posts', 'social-media-feather' ),
-						'tip'     => __(
-							'Sharing buttons are only displayed on single posts/pages and not on archive pages like blog/category/tag/author pages',
-							'social-media-feather'
-						),
+						'label'   => 'Sharing Single Posts',
+						'tip'     => 	'Sharing buttons are only displayed on single posts/pages and not on archive pages like blog/category/tag/author pages',
 					),
 					'automatic_share_post_types'    => array(
 						'type'    => 'custom',
@@ -275,53 +230,35 @@ $synved_social_options = array(
 							'synved_social_automatic_append_post_types_set',
 							array( 'post', 'page' )
 						),
-						'label'   => __( 'Share Post Types', 'social-media-feather' ),
-						'tip'     => __(
-							'Post types for which automatic appending for share buttons should be attempted (CTRL + click to select multiple ones)',
-							'social-media-feather'
-						),
+						'label'   => 'Share Post Types',
+						'tip'     => 	'Post types for which automatic appending for share buttons should be attempted (CTRL + click to select multiple ones)',
 						'render'  => 'synved_social_automatic_append_post_types_render',
 					),
 					'automatic_share_prefix'        => array(
 						'default' => '',
-						'label'   => __( 'Share Prefix Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place this markup before the share buttons markup',
-							'social-media-feather'
-						),
+						'label'   => 'Share Prefix Markup',
+						'tip'     => 	'When automatically appending, place this markup before the share buttons markup',
 					),
 					'automatic_share_postfix'       => array(
 						'default' => '',
-						'label'   => __( 'Share Postfix Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place this markup after all of the share buttons markup',
-							'social-media-feather'
-						),
+						'label'   => 'Share Postfix Markup',
+						'tip'     => 	'When automatically appending, place this markup after all of the share buttons markup',
 					),
 					'automatic_follow'              => array(
 						'default' => true,
-						'label'   => __( 'Display Follow Buttons', 'social-media-feather' ),
-						'tip'     => __(
-							'Tries to automatically append follow buttons to your posts (disable for specific posts by setting custom field synved_social_exclude or synved_social_exclude_follow to "yes", case sensitive)',
-							'social-media-feather'
-						),
+						'label'   => 'Display Follow Buttons',
+						'tip'     => 	'Tries to automatically append follow buttons to your posts (disable for specific posts by setting custom field synved_social_exclude or synved_social_exclude_follow to "yes", case sensitive)',
 					),
 					'automatic_follow_position'     => array(
 						'default' => 'after_post',
 						'set'     => 'after_post=After Post,before_post=Before Post,after_before_post=After and Before Post',
-						'label'   => __( 'Follow Buttons Position', 'social-media-feather' ),
-						'tip'     => __(
-							'Select where the follow buttons should be placed. Note: placing buttons Before Post might not work in all themes.',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Buttons Position',
+						'tip'     => 	'Select where the follow buttons should be placed. Note: placing buttons Before Post might not work in all themes.',
 					),
 					'automatic_follow_single'       => array(
 						'default' => false,
-						'label'   => __( 'Follow Single Posts', 'social-media-feather' ),
-						'tip'     => __(
-							'Follow buttons are only displayed on single posts/pages and not on archive pages like blog/category/tag/author pages',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Single Posts',
+						'tip'     => 	'Follow buttons are only displayed on single posts/pages and not on archive pages like blog/category/tag/author pages',
 					),
 					'automatic_follow_post_types'   => array(
 						'type'    => 'custom',
@@ -330,149 +267,107 @@ $synved_social_options = array(
 							'synved_social_automatic_append_post_types_set',
 							array( 'post', 'page' )
 						),
-						'label'   => __( 'Follow Post Types', 'social-media-feather' ),
-						'tip'     => __(
-							'Post types for which automatic appending for follow buttons should be attempted (CTRL + click to select multiple ones)',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Post Types',
+						'tip'     => 	'Post types for which automatic appending for follow buttons should be attempted (CTRL + click to select multiple ones)',
 						'render'  => 'synved_social_automatic_append_post_types_render',
 					),
 					'automatic_follow_before_share' => array(
 						'default' => false,
-						'label'   => __( 'Follow Before Share', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place follow buttons before share buttons. Only valid when share and follow buttons positions are the same.',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Before Share',
+						'tip'     => 	'When automatically appending, place follow buttons before share buttons. Only valid when share and follow buttons positions are the same.',
 					),
 					'automatic_follow_prefix'       => array(
 						'default' => '',
-						'label'   => __( 'Follow Prefix Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place this markup before the follow buttons markup',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Prefix Markup',
+						'tip'     => 	'When automatically appending, place this markup before the follow buttons markup',
 					),
 					'automatic_follow_postfix'      => array(
 						'default' => '',
-						'label'   => __( 'Follow Postfix Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place this markup after all of the follow buttons markup',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Postfix Markup',
+						'tip'     => 	'When automatically appending, place this markup after all of the follow buttons markup',
 					),
 					'automatic_append_prefix'       => array(
 						'default' => '',
-						'label'   => __( 'Prefix Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place this markup before the buttons markup',
-							'social-media-feather'
-						),
+						'label'   => 'Prefix Markup',
+						'tip'     => 	'When automatically appending, place this markup before the buttons markup',
 					),
 					'automatic_append_separator'    => array(
 						'default' => '<br/>',
-						'label'   => __( 'Separator Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending both, use this markup as separator between the set of share buttons and the set of follow buttons. Only valid when share and follow buttons positions are the same.',
-							'social-media-feather'
-						),
+						'label'   => 'Separator Markup',
+						'tip'     => 	'When automatically appending both, use this markup as separator between the set of share buttons and the set of follow buttons. Only valid when share and follow buttons positions are the same.',
 					),
 					'automatic_append_postfix'      => array(
 						'default' => '',
-						'label'   => __( 'Postfix Markup', 'social-media-feather' ),
-						'tip'     => __(
-							'When automatically appending, place this markup after all of the buttons markup',
-							'social-media-feather'
-						),
+						'label'   => 'Postfix Markup',
+						'tip'     => 	'When automatically appending, place this markup after all of the buttons markup',
 					),
 				),
 			),
 			'section_customize_look'    => array(
-				'label'    => __( 'Customize Look', 'social-media-feather' ),
+				'label'    => 'Customize Look',
 				'tip'      => synved_option_callback(
 					'synved_social_section_customize_look_tip',
-					__( 'Customize the look & feel of Social Media Feather', 'social-media-feather' )
+					'Customize the look & feel of Social Media Feather'
 				),
 				'settings' => array(
 					'icon_skin'                => array(
 						'default' => 'regular',
 						'set'     => synved_option_callback( 'synved_social_cb_icon_skin_set', 'regular=Regular' ),
-						'label'   => __( 'Icon Skin', 'social-media-feather' ),
+						'label'   => 'Icon Skin',
 						'tip'     => '',
 						'render'  => 'synved_social_icon_skin_render',
 					),
 					'icon_size'                => array(
 						'default' => 48,
 						'set'     => '16=16x16,24=24x24,32=32x32,48=48x48,64=64x64,96=96x96',
-						'label'   => __( 'Icon Size', 'social-media-feather' ),
-						'tip'     => __(
-							'Select the size in pixels for the icons. Note: for high resolution displays like Retina the maximum size is 64x64.',
-							'social-media-feather'
-						),
+						'label'   => 'Icon Size',
+						'tip'     => 	'Select the size in pixels for the icons. Note: for high resolution displays like Retina the maximum size is 64x64.',
 					),
 					'icon_resolution'          => array(
 						'default' => 'single',
 						'set'     => 'single=Single,double=Double',
-						'label'   => __( 'Icon Resolution', 'social-media-feather' ),
-						'tip'     => __(
-							'Select what icon resolutions will be used. Single might make the icons slightly blurry on low resolution displays. Double will always look the best but will consume more bandwidth.',
-							'social-media-feather'
-						),
+						'label'   => 'Icon Resolution',
+						'tip'     => 	'Select what icon resolutions will be used. Single might make the icons slightly blurry on low resolution displays. Double will always look the best but will consume more bandwidth.',
 					),
 					'icon_spacing'             => array(
 						'default' => 5,
-						'label'   => __( 'Icon Spacing', 'social-media-feather' ),
-						'tip'     => __( 'Select the spacing in pixels between the icons', 'social-media-feather' ),
+						'label'   => 'Icon Spacing',
+						'tip'     => 'Select the spacing in pixels between the icons',
 					),
 					'buttons_container'        => array(
 						'default' => 'none',
 						'set'     => 'none=None,share=Sharing Buttons,follow=Following Buttons,both=Both',
-						'label'   => __( 'Buttons in Container', 'social-media-feather' ),
-						'tip'     => __(
-							'Determines whether or not to wrap the buttons in a container, which will affect how the buttons are rendered, based on the "Buttons Container Type" setting.',
-							'social-media-feather'
-						),
+						'label'   => 'Buttons in Container',
+						'tip'     => 	'Determines whether or not to wrap the buttons in a container, which will affect how the buttons are rendered, based on the "Buttons Container Type" setting.',
 					),
 					'buttons_container_type'   => array(
 						'default' => 'basic',
 						'set'     => 'basic=Basic,block=Block',
-						'label'   => __( 'Buttons Container Type', 'social-media-feather' ),
-						'tip'     => __(
-							'"Basic" should not affect rendering, while "Block" should display the buttons in their own row. <b>Note</b>: selecting "Block" might not look the way you want if you\'re using Prefix or Postfix markup.',
-							'social-media-feather'
-						),
+						'label'   => 'Buttons Container Type',
+						'tip'     => 	'"Basic" should not affect rendering, while "Block" should display the buttons in their own row. <b>Note</b>: selecting "Block" might not look the way you want if you\'re using Prefix or Postfix markup.',
 					),
 					'buttons_alignment_share'  => array(
 						'default' => 'none',
 						'set'     => 'none=Theme Default,left=Align Left,right=Align Right,center=Align Center',
-						'label'   => __( 'Share Buttons Alignment', 'social-media-feather' ),
-						'tip'     => __(
-							'Will attempt at aligning the share buttons accordingly. <strong>Note:</strong> this will enforce "Buttons Container Type" of "Block" and might not work reliably on all themes',
-							'social-media-feather'
-						),
+						'label'   => 'Share Buttons Alignment',
+						'tip'     => 	'Will attempt at aligning the share buttons accordingly. <strong>Note:</strong> this will enforce "Buttons Container Type" of "Block" and might not work reliably on all themes',
 					),
 					'buttons_alignment_follow' => array(
 						'default' => 'none',
 						'set'     => 'none=Theme Default,left=Align Left,right=Align Right,center=Align Center',
-						'label'   => __( 'Follow Buttons Alignment', 'social-media-feather' ),
-						'tip'     => __(
-							'Will attempt at aligning the follow buttons accordingly. <strong>Note:</strong> this will enforce "Buttons Container Type" of "Block" and might not work reliably on all themes',
-							'social-media-feather'
-						),
+						'label'   => 'Follow Buttons Alignment',
+						'tip'     => 	'Will attempt at aligning the follow buttons accordingly. <strong>Note:</strong> this will enforce "Buttons Container Type" of "Block" and might not work reliably on all themes',
 					),
 					'custom_style'             => array(
 						'type'  => 'style',
-						'label' => __( 'Extra Styles', 'social-media-feather' ),
-						'tip'   => __(
-							'Any CSS styling code you type in here will be loaded after all of the Social Media Feather styles.',
-							'social-media-feather'
-						),
+						'label' => 'Extra Styles',
+						'tip'   => 	'Any CSS styling code you type in here will be loaded after all of the Social Media Feather styles.',
 					),
 				),
 			),
 			'section_service_providers' => array(
-				'label'    => __( 'Service Providers', 'social-media-feather' ),
-				'tip'      => __( 'Customize social sharing and following providers', 'social-media-feather' ),
+				'label'    => 'Service Providers',
+				'tip'      => 'Customize social sharing and following providers',
 				'settings' => synved_social_provider_settings(),
 			),
 		),
@@ -1087,26 +982,20 @@ function synved_social_init() {
 		);
 
 		$common_params = array(
-			'skin'           => __( 'Specify which skin to use for the icons', 'social-media-feather' ),
+			'skin'           => 'Specify which skin to use for the icons',
 			'size'           => sprintf(
 				/* translators: %s are the possible values of icons. */
-				__(
-					'Specify the size for the icons, possible values are %s',
-					'social-media-feather'
-				),
+				'Specify the size for the icons, possible values are %s',
 				$size_set
 			),
 			'spacing'        => __(
 				'Determines how much blank space there will be between the buttons, in pixels',
 				'social-media-feather'
 			),
-			'container'      => __( 'Determines whether to wrap the buttons in a container', 'social-media-feather' ),
+			'container'      => 'Determines whether to wrap the buttons in a container',
 			'container_type' => sprintf(
 				/* translators: %s are the possible values of container types. */
-				__(
-					'Determines what type of container to use, possible values are %1$s',
-					'social-media-feather'
-				),
+				'Determines what type of container to use, possible values are %1$s',
 				'basic, block'
 			),
 			'class'          => __(
@@ -1144,10 +1033,7 @@ function synved_social_init() {
 			synved_shortcode_item_help_set(
 				'feather_share',
 				array(
-					'tip'        => __(
-						'Creates a list of buttons for social sharing as selected in the Social Media options',
-						'social-media-feather'
-					),
+					'tip'        => 'Creates a list of buttons for social sharing as selected in the Social Media options',
 					'parameters' => $share_params,
 				)
 			);
@@ -1155,10 +1041,7 @@ function synved_social_init() {
 			synved_shortcode_item_help_set(
 				'feather_follow',
 				array(
-					'tip'        => __(
-						'Creates a list of buttons for social following as selected in the Social Media options',
-						'social-media-feather'
-					),
+					'tip'        => 'Creates a list of buttons for social following as selected in the Social Media options',
 					'parameters' => $follow_params,
 				)
 			);

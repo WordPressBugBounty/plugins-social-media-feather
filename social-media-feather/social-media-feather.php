@@ -5,7 +5,7 @@
  * Plugin URI: https://sharethis.com/platform/wordpress-social-media-feather/
  * Description: Super lightweight social media plugin to add nice and effective social media sharing and following buttons and icons anywhere on your site quickly and easily.
  * Author: socialmediafeather
- * Version: 2.1.6
+ * Version: 2.2.0
  * Author URI: https://sharethis.com/platform/wordpress-social-media-feather/
  *
  * @package SocialMediaFeather
@@ -16,7 +16,7 @@ define( 'SOCIAL_MEDIA_FEATHER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 const SOCIAL_MEDIA_FEATHER_PLUGIN_MAIN_FILE = __FILE__;
 
-const SYNVED_VERSION = '2.1.6';
+const SYNVED_VERSION = '2.2.0';
 
 if ( false === function_exists( 'synved_wp_social_load' ) ) {
 	/**

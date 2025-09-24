@@ -163,7 +163,7 @@ class SynvedSocialWidget extends WP_Widget {
 				'tip'         => '',
 				'output_name' => $this->get_field_name( 'icon_skin' ),
 				'value'       => $instance['icon_skin'],
-				'set_before'  => array( array( 'default' => __( 'Use Default' ) ) ),
+				'set_before'  => array( array( 'default' => 'Use Default' ) ),
 			);
 
 			$item = synved_option_item( 'synved_social', 'icon_skin' );
@@ -187,7 +187,7 @@ class SynvedSocialWidget extends WP_Widget {
 				'tip'         => '',
 				'output_name' => $this->get_field_name( 'icon_size' ),
 				'value'       => $instance['icon_size'],
-				'set_before'  => array( array( 'default' => __( 'Use Default' ) ) ),
+				'set_before'  => array( array( 'default' => 'Use Default' ) ),
 			);
 
 			synved_option_render_item( 'synved_social', 'icon_size', null, true, $params, 'widget' );

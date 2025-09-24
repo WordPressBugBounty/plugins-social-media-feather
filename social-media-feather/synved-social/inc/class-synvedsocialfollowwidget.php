@@ -15,7 +15,7 @@ class SynvedSocialFollowWidget extends SynvedSocialWidget {
 	public function __construct() {
 		parent::__construct(
 			'synved_social_follow',
-			__( 'Social Media Feather: Follow Us', 'social-media-feather' )
+			'Social Media Feather: Follow Us'
 		);
 	}
 
@@ -27,7 +27,7 @@ class SynvedSocialFollowWidget extends SynvedSocialWidget {
 	public function get_defaults() {
 		$defaults = parent::get_defaults();
 
-		return array_merge( $defaults, array( 'title' => __( 'Follow Us', 'social-media-feather' ) ) );
+		return array_merge( $defaults, array( 'title' => 'Follow Us' ) );
 	}
 
 	/**

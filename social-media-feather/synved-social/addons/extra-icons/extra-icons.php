@@ -18,7 +18,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 
 		$icons = array(
 			'clearslate' => array(
-				'label'  => __( 'Clear Slate', 'social-media-feather' ),
+				'label'  => 'Clear Slate',
 				'image'  => $uri . '/image/social/clearslate/preview.png',
 				'folder' => $addon_dir . '/image/social/clearslate/',
 				'path'   => $path . '/image/social/clearslate/',
@@ -26,7 +26,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'darkslate'  => array(
-				'label'  => __( 'Dark Slate', 'social-media-feather' ),
+				'label'  => 'Dark Slate',
 				'image'  => $uri . '/image/social/darkslate/preview.png',
 				'folder' => $addon_dir . '/image/social/darkslate/',
 				'path'   => $path . '/image/social/darkslate/',
@@ -34,7 +34,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'circle'     => array(
-				'label'  => __( 'Circle', 'social-media-feather' ),
+				'label'  => 'Circle',
 				'image'  => $uri . '/image/social/circle/preview.png',
 				'folder' => $addon_dir . '/image/social/circle/',
 				'path'   => $path . '/image/social/circle/',
@@ -42,7 +42,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'wheel'      => array(
-				'label'  => __( 'Wheel', 'social-media-feather' ),
+				'label'  => 'Wheel',
 				'image'  => $uri . '/image/social/wheel/preview.png',
 				'folder' => $addon_dir . '/image/social/wheel/',
 				'path'   => $path . '/image/social/wheel/',
@@ -50,7 +50,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'flag'       => array(
-				'label'  => __( 'Flag', 'social-media-feather' ),
+				'label'  => 'Flag',
 				'image'  => $uri . '/image/social/flag/preview.png',
 				'folder' => $addon_dir . '/image/social/flag/',
 				'path'   => $path . '/image/social/flag/',
@@ -58,7 +58,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'medal'      => array(
-				'label'  => __( 'Medal', 'social-media-feather' ),
+				'label'  => 'Medal',
 				'image'  => $uri . '/image/social/medal/preview.png',
 				'folder' => $addon_dir . '/image/social/medal/',
 				'path'   => $path . '/image/social/medal/',
@@ -66,7 +66,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'shed'       => array(
-				'label'  => __( 'Shed', 'social-media-feather' ),
+				'label'  => 'Shed',
 				'image'  => $uri . '/image/social/shed/preview.png',
 				'folder' => $addon_dir . '/image/social/shed/',
 				'path'   => $path . '/image/social/shed/',
@@ -74,7 +74,7 @@ if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 				'extra'  => true,
 			),
 			'balloon'    => array(
-				'label'  => __( 'Balloon', 'social-media-feather' ),
+				'label'  => 'Balloon',
 				'image'  => $uri . '/image/social/balloon/preview.png',
 				'folder' => $addon_dir . '/image/social/balloon/',
 				'path'   => $path . '/image/social/balloon/',

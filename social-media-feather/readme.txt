@@ -2,9 +2,9 @@
 Contributors: socialmediafeather, scottstorebloom, scottmweaver
 Tags: social media, social sharing, social buttons, Facebook, Share, Like, twitter, google, Reddit, youtube, instagram, pinterest, social media buttons, button, shortcode, sidebar, sharing buttons, follow buttons
 Requires at least: 5.9
-Tested up to: 6.5.2
-Stable tag: 2.1.6
-Version: 2.1.6
+Tested up to: 6.8.2
+Stable tag: 2.2.0
+Version: 2.2.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,10 @@ margin-left: 10px;
 5. An illustration of following functionality.
 
 == Changelog ==
+
+= 2.2.0 =
+* Fix text domain error.
+* Test up to wp ver 6.8.2
 
 = 2.1.6 =
 * Fix PHP 8.2 deprecations.

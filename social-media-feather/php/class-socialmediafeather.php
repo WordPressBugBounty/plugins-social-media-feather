@@ -175,7 +175,7 @@ class SocialMediaFeather {
 			$local_actions['settings'] = '<a href="'
 										. esc_url( admin_url( 'options-general.php?page=social-media-feather-settings' ) )
 										. '">'
-										. esc_html__( 'Settings', 'social-media-feather' )
+										. 'Settings'
 										. '</a>';
 
 			$plugin_actions = $plugin_actions + $local_actions;

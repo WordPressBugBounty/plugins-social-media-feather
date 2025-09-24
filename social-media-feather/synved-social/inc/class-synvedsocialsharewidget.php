@@ -14,7 +14,7 @@ class SynvedSocialShareWidget extends SynvedSocialWidget {
 	 * Constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'synved_social_share', __( 'Social Media Feather: Sharing', 'social-media-feather' ) );
+		parent::__construct( 'synved_social_share', 'Social Media Feather: Sharing' );
 	}
 
 	/**
@@ -25,7 +25,7 @@ class SynvedSocialShareWidget extends SynvedSocialWidget {
 	public function get_defaults() {
 		$defaults = parent::get_defaults();
 
-		return array_merge( $defaults, array( 'title' => __( 'Sharing', 'social-media-feather' ) ) );
+		return array_merge( $defaults, array( 'title' => 'Sharing' ) );
 	}
 
 	/**
