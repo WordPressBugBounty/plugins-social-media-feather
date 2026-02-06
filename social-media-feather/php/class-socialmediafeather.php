@@ -357,6 +357,7 @@ class SocialMediaFeather {
 					'post',
 					'page',
 					'attachment',
+					'product',
 				),
 			),
 			'automatic_follow_postfix'      => array(
@@ -391,6 +392,7 @@ class SocialMediaFeather {
 					'post',
 					'page',
 					'attachment',
+					'product'
 				),
 			),
 			'automatic_share_postfix'       => array(

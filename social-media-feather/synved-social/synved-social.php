@@ -605,13 +605,16 @@ function synved_social_button_list_markup( $context, $vars = null, $buttons = nu
 
 	if ( false === isset( $vars['url'], $vars['short_url'] ) ) {
 		$home_url = home_url();
-		$req_uri  = filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_STRING );
+		$req_uri  = filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_UNSAFE_RAW );
 
 		$path     = wp_parse_url( $home_url, PHP_URL_PATH );
-		$path_len = strlen( $path );
 
-		if ( strtolower( substr( $req_uri, 0, $path_len ) ) === strtolower( $path ) ) {
-			$req_uri = substr( $req_uri, $path_len );
+		if (false === is_null($path)) {
+			$path_len = strlen( $path );
+
+			if ( strtolower( substr( $req_uri, 0, $path_len ) ) === strtolower( $path ) ) {
+				$req_uri = substr( $req_uri, $path_len );
+			}
 		}
 
 		$url       = home_url( $req_uri );

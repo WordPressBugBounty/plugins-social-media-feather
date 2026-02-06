@@ -2,9 +2,9 @@
 Contributors: socialmediafeather, scottstorebloom, scottmweaver
 Tags: social media, social sharing, social buttons, Facebook, Share, Like, twitter, google, Reddit, youtube, instagram, pinterest, social media buttons, button, shortcode, sidebar, sharing buttons, follow buttons
 Requires at least: 5.9
-Tested up to: 6.8.2
-Stable tag: 2.2.0
-Version: 2.2.0
+Tested up to: 6.8.3
+Stable tag: 2.2.1
+Version: 2.2.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,11 @@ margin-left: 10px;
 5. An illustration of following functionality.
 
 == Changelog ==
+
+= 2.2.1 =
+* Fix filter sanitize error.
+* Fix null errors.
+* Add product as an auto display post type.
 
 = 2.2.0 =
 * Fix text domain error.
