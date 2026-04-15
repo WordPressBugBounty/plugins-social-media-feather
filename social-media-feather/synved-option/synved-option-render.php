@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Render field name.
  *
@@ -241,7 +243,7 @@ function synved_option_render_item( $id, $name, $item = null, $render = false, $
 
 				if ( true === in_array( $type, array( 'image', 'video', 'media' ), true ) ) {
 					$out .= '<input type="hidden" name="' . esc_attr( synved_option_render_field_name( $id, $name . '_info_' ) ) . '" value="' . esc_attr( $type ) . '" />';
-					$out .= '&nbsp;&nbsp;<input type="button" class="synved-option-upload-button" value="' . esc_attr( __( 'Select File', 'synved-option' ) ) . '"' . $placeholder . ' />';
+					$out .= '&nbsp;&nbsp;<input type="button" class="synved-option-upload-button" value="' . esc_html__( 'Select File', 'social-media-feather' ) . '"' . esc_html( $placeholder ) . ' />';
 				}
 
 				break;
@@ -280,7 +282,7 @@ function synved_option_render_item( $id, $name, $item = null, $render = false, $
 					'name'            => esc_attr( $out_name ),
 					'id'              => esc_attr( $name ),
 					'selected'        => esc_attr( $value ),
-					'show_option_all' => __( 'Every', 'synved-option' ) . ' ' . ucfirst( $type ),
+					'show_option_all' => __( 'Every', 'social-media-feather' ) . ' ' . ucfirst( $type ),
 				);
 
 				$drop_out = null;
@@ -320,9 +322,9 @@ function synved_option_render_item( $id, $name, $item = null, $render = false, $
 		}
 
 		if ( false === empty( $hint ) ) {
-			$out .= ' <span class="snvdopt"><a class="button synved-option-reset-button" title="' . __(
+			$out .= ' <span class="snvdopt"><a class="button synved-option-reset-button" title="' . esc_html__(
 				'Set value to default hinted background value',
-				'synved-option'
+				'social-media-feather'
 			) . '" style="display: inline-block; padding: 0; vertical-align: middle; cursor: pointer;"><span class="ui-icon ui-icon-arrowrefresh-1-w"> </span></a></span>';
 		}
 	}

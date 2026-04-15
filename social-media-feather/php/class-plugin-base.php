@@ -7,6 +7,8 @@
 
 namespace SocialMediaFeather;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Class Plugin_Base
  *

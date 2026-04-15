@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 define( 'SYNVED_OPTION_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once SYNVED_OPTION_PLUGIN_PATH . 'synved-option-item.php';
@@ -774,8 +776,8 @@ function synved_option_wp_upgrader_source_selection( $source, $remote_source, $o
 					'synved_option_invalid_plugin_is_addon',
 					sprintf(
 					/* translators: %1$s is the page URL. %2$s is the page label. */
-						__(
-							'This addon must be installed through the <a href="%1$s">%2$s settings page</a>.'
+						esc_html__(
+							'This addon must be installed through the <a href="%1$s">%2$s settings page</a>.', 'social-media-feather'
 						),
 						$page_url,
 						$page_label

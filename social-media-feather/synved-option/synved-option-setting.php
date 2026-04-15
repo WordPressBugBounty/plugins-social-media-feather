@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Synved option sanitize item callback helper.
  *

@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 if ( false === function_exists( 'synved_social_addon_extra_icons_get' ) ) {
 	/**
 	 * Addon extra icons getter.

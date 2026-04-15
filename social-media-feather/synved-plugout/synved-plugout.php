@@ -22,6 +22,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 define( 'SYNVED_PLUGOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( false === function_exists( 'synved_plugout_version' ) ) {

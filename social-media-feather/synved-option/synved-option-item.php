@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Item query into.
  *
@@ -671,7 +673,7 @@ function synved_option_item_validate_value( $id, $name, $value, &$new_value = nu
 
 	if ( false === $is_valid ) {
 		if ( true === empty( $error ) ) {
-			$error = __( 'Selected value is invalid', 'synved-option' );
+			$error = esc_html__( 'Selected value is invalid', 'social-media-feather' );
 		}
 
 		$error_list[] = array(

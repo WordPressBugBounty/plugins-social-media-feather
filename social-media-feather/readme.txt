@@ -1,10 +1,10 @@
-=== Social Media Feather | social media sharing ===
+=== Social Media Feather ===
 Contributors: socialmediafeather, scottstorebloom, scottmweaver
-Tags: social media, social sharing, social buttons, Facebook, Share, Like, twitter, google, Reddit, youtube, instagram, pinterest, social media buttons, button, shortcode, sidebar, sharing buttons, follow buttons
+Tags: social media, social sharing, social buttons, social media buttons, sharing buttons
 Requires at least: 5.9
-Tested up to: 6.8.3
-Stable tag: 2.2.1
-Version: 2.2.1
+Tested up to: 6.9
+Stable tag: 2.2.2
+Version: 2.2.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,13 @@ margin-left: 10px;
 5. An illustration of following functionality.
 
 == Changelog ==
+
+= 2.2.2 =
+* Test to 6.9.
+* Fix text domains.
+* Escape texts.
+* License.
+* Early text domain error.
 
 = 2.2.1 =
 * Fix filter sanitize error.

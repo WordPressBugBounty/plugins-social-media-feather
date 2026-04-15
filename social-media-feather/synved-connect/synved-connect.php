@@ -18,6 +18,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 define( 'SYNVED_CONNECT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
 const SYNVED_WP_MODERN_VERSION = '4.1';

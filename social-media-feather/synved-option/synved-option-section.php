@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Section default name.
  *
@@ -31,7 +33,7 @@ function synved_option_section_default( $id, $page ) {
 	return array(
 		'name'  => $section,
 		'type'  => 'options-section',
-		'label' => __( 'General Settings', 'synved-option' ),
-		'tip'   => __( 'General Settings for', 'synved-option' ) . ' ' . synved_option_label_from_id( $id ),
+		'label' => esc_html__( 'General Settings', 'social-media-feather' ),
+		'tip'   => esc_html__( 'General Settings for', 'social-media-feather' ) . ' ' . synved_option_label_from_id( $id ),
 	);
 }

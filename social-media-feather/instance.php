@@ -7,6 +7,8 @@
 
 namespace SocialMediaFeather;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require_once __DIR__ . '/php/class-plugin-base.php';
 require_once __DIR__ . '/php/class-plugin.php';
 

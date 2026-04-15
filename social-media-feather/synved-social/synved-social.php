@@ -18,6 +18,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 define( 'SYNVED_SOCIAL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SYNVED_SOCIAL_LOADED', true );
 define( 'SYNVED_SOCIAL_VERSION', 100070016 );
@@ -46,90 +48,90 @@ function synved_social_service_provider_list( $context, $raw = false ) {
 		$provider_list = array(
 			'facebook'  => array(
 				'link'  => 'https://www.facebook.com/sharer.php?u=%%url%%&t=%%title%%&s=100&p[url]=%%url%%&p[images][0]=%%image%%&p[title]=%%title%%',
-				'title' => __( 'Share on Facebook' ),
+				'title' => 'Share on Facebook',
 			),
 			'twitter'   => array(
 				'link'  => 'https://twitter.com/intent/tweet?url=%%url%%&text=%%message%%',
-				'title' => __( 'Share on Twitter' ),
+				'title' => 'Share on Twitter',
 			),
 			'reddit'    => array(
 				'link'  => 'https://www.reddit.com/submit?url=%%url%%&title=%%title%%',
-				'title' => __( 'Share on Reddit' ),
+				'title' => 'Share on Reddit',
 			),
 			'pinterest' => array(
 				'link'  => 'https://pinterest.com/pin/create/button/?url=%%url%%&media=%%image%%&description=%%title%%',
-				'title' => __( 'Pin it with Pinterest' ),
+				'title' => 'Pin it with Pinterest',
 			),
 			'linkedin'  => array(
 				'link'  => 'https://www.linkedin.com/shareArticle?mini=true&url=%%url%%&title=%%title%%',
-				'title' => __( 'Share on Linkedin' ),
+				'title' => 'Share on Linkedin',
 			),
 			'tumblr'    => array(
 				'link'            => 'https://tumblr.com/share?s=&v=3&t=%%title%%&u=%%url%%',
-				'title'           => __( 'Share on tumblr' ),
+				'title'           => 'Share on tumblr',
 				'default-display' => false,
 			),
 			'mail'      => array(
 				'link'  => 'mailto:?subject=%%title%%&body=%%message%%:%20%%url%%',
-				'title' => __( 'Share by email' ),
+				'title' => 'Share by email',
 			),
 		);
 	} elseif ( 'follow' === $context ) {
 		$provider_list = array(
 			'facebook'   => array(
 				'link'  => 'https://www.facebook.com/facebook',
-				'title' => __( 'Follow us on Facebook' ),
+				'title' => 'Follow us on Facebook',
 			),
 			'twitter'    => array(
 				'link'  => 'https://twitter.com/twitter',
-				'title' => __( 'Follow us on Twitter' ),
+				'title' => 'Follow us on Twitter',
 			),
 			'pinterest'  => array(
 				'link'            => 'https://pinterest.com/MyUserName/',
-				'title'           => __( 'Our board on Pinterest' ),
+				'title'           => 'Our board on Pinterest',
 				'default-display' => false,
 			),
 			'linkedin'   => array(
 				'link'  => 'https://www.linkedin.com/in/yourid',
-				'title' => __( 'Find us on Linkedin' ),
+				'title' => 'Find us on Linkedin',
 			),
 			'rss'        => array(
 				'label' => 'RSS',
 				'link'  => 'https://feeds.feedburner.com/MyFeedName',
-				'title' => __( 'Subscribe to our RSS Feed' ),
+				'title' => 'Subscribe to our RSS Feed',
 			),
 			'youtube'    => array(
 				'link'  => 'https://www.youtube.com/MyYouTubeName',
-				'title' => __( 'Find us on YouTube' ),
+				'title' => 'Find us on YouTube',
 			),
 			'vimeo'      => array(
 				'link'            => 'https://vimeo.com/MyVimeoName',
-				'title'           => __( 'Find us on vimeo' ),
+				'title'           => 'Find us on vimeo',
 				'default-display' => false,
 			),
 			'tumblr'     => array(
 				'link'            => 'https://myname.tumblr.com',
-				'title'           => __( 'Find us on tumblr' ),
+				'title'           => 'Find us on tumblr',
 				'default-display' => false,
 			),
 			'instagram'  => array(
 				'link'            => 'https://instagram.com/myusername',
-				'title'           => __( 'Check out our instagram feed' ),
+				'title'           => 'Check out our instagram feed',
 				'default-display' => false,
 			),
 			'flickr'     => array(
 				'link'            => 'https://www.flickr.com/photos/myusername/',
-				'title'           => __( 'Check out our flickr feed' ),
+				'title'           => 'Check out our flickr feed',
 				'default-display' => false,
 			),
 			'foursquare' => array(
 				'link'            => 'https://foursquare.com/myusername',
-				'title'           => __( 'Check out our foursquare feed' ),
+				'title'           => 'Check out our foursquare feed',
 				'default-display' => false,
 			),
 			'mail'       => array(
 				'link'            => 'mailto:mail@example.com?subject=Contact%20Request',
-				'title'           => __( 'Contact Us' ),
+				'title'           => 'Contact Us',
 				'default-display' => false,
 			),
 		);
@@ -192,7 +194,7 @@ function synved_social_icon_skin_list() {
 
 		$icons = array(
 			'regular' => array(
-				'label'  => __( 'Regular' ),
+				'label'  => esc_html__( 'Regular', 'social-media-feather' ),
 				'image'  => $uri . '/image/social/regular/preview.png',
 				'folder' => '/image/social/regular/',
 				'path'   => $path . '/image/social/regular/',
@@ -678,7 +680,7 @@ function synved_social_button_list_markup( $context, $vars = null, $buttons = nu
 		$message = synved_option_get( 'synved_social', 'share_message_default' );
 
 		if ( true === empty( $message ) ) {
-			$message = __( 'Hey check this out', 'social-media-feather' );
+			$message = esc_html__( 'Hey check this out', 'social-media-feather' );
 		}
 
 		$vars['message'] = $message;
@@ -1050,10 +1052,10 @@ function synved_social_button_list_markup( $context, $vars = null, $buttons = nu
 		}
 
 		if ( false !== boolval( synved_option_get( 'synved_social', 'show_credit', false ) ) ) {
-			$out .= '<a class="synved-social-credit" target="_blank" rel="nofollow" title="' . __(
+			$out .= '<a class="synved-social-credit" target="_blank" rel="nofollow" title="' . esc_html__(
 				'WordPress Social Media Feather',
 				'social-media-feather'
-			) . '" href="http://synved.com/wordpress-social-media-feather/" style="color:#444; text-decoration:none; font-size:8px; margin-left:5px;vertical-align:10px;white-space:nowrap;"><span>' . __(
+			) . '" href="http://synved.com/wordpress-social-media-feather/" style="color:#444; text-decoration:none; font-size:8px; margin-left:5px;vertical-align:10px;white-space:nowrap;"><span>' . esc_html__(
 				'by ',
 				'social-media-feather'
 			) . '</span><img style="display: inline;margin:0;padding:0;width:16px;height:16px;" width="16" height="16" alt="feather" src="' . $uri . '/image/icon.png" /></a>';

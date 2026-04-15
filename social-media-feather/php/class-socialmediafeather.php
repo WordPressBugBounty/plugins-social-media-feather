@@ -7,6 +7,8 @@
 
 namespace SocialMediaFeather;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Social Media Feather Class
  *

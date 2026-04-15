@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Social Provider Settings.
  *
@@ -970,15 +972,9 @@ function synved_social_init() {
 
 		$providers_params = array(
 			/* translators: %1$s is the provider. %2$s are the possible values. */
-			'show' => __(
-				'Specify a comma-separated list of %1$s providers to show and their order, possible values are %2$s',
-				'social-media-feather'
-			),
+			'show' => 'Specify a comma-separated list of %1$s providers to show and their order, possible values are %2$s',
 			/* translators: %1$s is the provider. %2$s are the possible values. */
-			'hide' => __(
-				'Specify a comma-separated list of %1$s providers to hide, possible values are %2$s',
-				'social-media-feather'
-			),
+			'hide' => 'Specify a comma-separated list of %1$s providers to hide, possible values are %2$s',
 		);
 
 		$common_params = array(
@@ -988,35 +984,20 @@ function synved_social_init() {
 				'Specify the size for the icons, possible values are %s',
 				$size_set
 			),
-			'spacing'        => __(
-				'Determines how much blank space there will be between the buttons, in pixels',
-				'social-media-feather'
-			),
+			'spacing'        => 'Determines how much blank space there will be between the buttons, in pixels',
 			'container'      => 'Determines whether to wrap the buttons in a container',
 			'container_type' => sprintf(
 				/* translators: %s are the possible values of container types. */
 				'Determines what type of container to use, possible values are %1$s',
 				'basic, block'
 			),
-			'class'          => __(
-				'Select additional CSS classes for the buttons, separated by spaces',
-				'social-media-feather'
-			),
+			'class'          => 'Select additional CSS classes for the buttons, separated by spaces',
 		);
 
 		$share_params = array(
-			'url'     => __(
-				'URL to use for the sharing buttons, default is the current post URL',
-				'social-media-feather'
-			),
-			'title'   => __(
-				'Title to use for the sharing buttons, default is the current post title',
-				'social-media-feather'
-			),
-			'message' => __(
-				'Message to use when sharing content, replaced into the %%message%% variable',
-				'social-media-feather'
-			),
+			'url'     => 'URL to use for the sharing buttons, default is the current post URL',
+			'title'   => 'Title to use for the sharing buttons, default is the current post title',
+			'message' => 'Message to use when sharing content, replaced into the %%message%% variable',
 		);
 
 		$follow_params = array();

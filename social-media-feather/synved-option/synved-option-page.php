@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Option page default values.
  *
@@ -86,11 +88,9 @@ function synved_option_page_cb( $id, $name, $item ) {
 
 	if ( false === current_user_can( $role ) ) {
 		wp_die(
-			esc_html(
-				__(
-					'You do not have sufficient permissions to access this page.',
-					'synved-option'
-				)
+			esc_html__(
+                'You do not have sufficient permissions to access this page.',
+                'social-media-feather'
 			)
 		);
 	}

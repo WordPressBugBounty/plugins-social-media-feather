@@ -5,6 +5,8 @@
  * @package SocialMediaFeather
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Social follow render.
  *
@@ -20,12 +22,12 @@ function synved_connect_support_social_follow_render() {
 	if ( true === empty( get_option( 'smf-hide-review' ) ) ) {
 		$out .= '<div class="smf-review-us">';
 		$out .= '<h3>';
-		$out .= esc_html__( 'Love this plugin?', 'synved-connect' );
+		$out .= esc_html__( 'Love this plugin?', 'social-media-feather' );
 		$out .= '<p>';
 		$out .= '<a href="https://wordpress.org/support/plugin/social-media-feather/reviews/#new-post" target="_blank">';
 		$out .= esc_html__(
 			'Please spread the word by leaving us a 5 star review!',
-			'synved-connect'
+			'social-media-feather'
 		);
 		$out .= '</a>';
 		$out .= '</p>';
