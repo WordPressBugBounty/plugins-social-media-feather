@@ -2,9 +2,9 @@
 Contributors: sharethis, socialmediafeather, scottstorebloom, scottmweaver
 Tags: social media, social sharing, social buttons, share buttons, follow buttons
 Requires at least: 5.9
-Tested up to: 6.9
-Stable tag: 2.2.3
-Version: 2.2.3
+Tested up to: 7.0
+Stable tag: 2.2.4
+Version: 2.2.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -180,6 +180,9 @@ Example:
 5. Follow buttons example
 
 == Changelog ==
+
+= 2.2.4 =
+* Test wp ver 7.
 
 = 2.2.3 =
 * Update readme.
