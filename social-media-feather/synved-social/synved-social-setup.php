@@ -708,6 +708,26 @@ function synved_social_admin_enqueue_scripts() {
 }
 
 /**
+ * Frontend enqueue scripts for Social.
+ *
+ * Only the AI assistants that cannot take a prompt in a URL need scripting.
+ *
+ * @return void
+ */
+function synved_social_enqueue_scripts() {
+	$uri = synved_social_path_uri();
+	$dir = plugin_dir_path( __FILE__ );
+
+	wp_enqueue_script(
+		'synved-social-script-ai-clipboard',
+		$uri . '/script/ai-clipboard.js',
+		array(),
+		filemtime( $dir . '/script/ai-clipboard.js' ),
+		true
+	);
+}
+
+/**
  * Register widgets.
  *
  * @return void
@@ -1072,4 +1092,6 @@ add_action( 'widgets_init', 'synved_social_register_widgets' );
 
 if ( true === is_admin() ) {
 	add_action( 'admin_enqueue_scripts', 'synved_social_admin_enqueue_scripts' );
+} else {
+	add_action( 'wp_enqueue_scripts', 'synved_social_enqueue_scripts' );
 }

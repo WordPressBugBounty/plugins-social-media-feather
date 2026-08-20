@@ -34,6 +34,18 @@ require_once SYNVED_SOCIAL_PLUGIN_PATH . 'inc/class-synvedsocialsharewidget.php'
 require_once SYNVED_SOCIAL_PLUGIN_PATH . 'inc/class-synvedsocialfollowwidget.php';
 
 /**
+ * Get the AI assistants that need the prompt copied to the clipboard.
+ *
+ * Neither accepts a prompt in a URL, so the button copies the prompt and
+ * opens a blank chat for the visitor to paste into.
+ *
+ * @return array
+ */
+function synved_social_ai_copy_provider_list() {
+	return array( 'copilot', 'gemini' );
+}
+
+/**
  * Get service provider list array.
  *
  * @param string $context Context string.
@@ -46,34 +58,64 @@ function synved_social_service_provider_list( $context, $raw = false ) {
 
 	if ( 'share' === $context ) {
 		$provider_list = array(
-			'facebook'  => array(
+			'facebook'   => array(
 				'link'  => 'https://www.facebook.com/sharer.php?u=%%url%%&t=%%title%%&s=100&p[url]=%%url%%&p[images][0]=%%image%%&p[title]=%%title%%',
 				'title' => 'Share on Facebook',
 			),
-			'twitter'   => array(
+			'twitter'    => array(
 				'link'  => 'https://twitter.com/intent/tweet?url=%%url%%&text=%%message%%',
 				'title' => 'Share on Twitter',
 			),
-			'reddit'    => array(
+			'reddit'     => array(
 				'link'  => 'https://www.reddit.com/submit?url=%%url%%&title=%%title%%',
 				'title' => 'Share on Reddit',
 			),
-			'pinterest' => array(
+			'pinterest'  => array(
 				'link'  => 'https://pinterest.com/pin/create/button/?url=%%url%%&media=%%image%%&description=%%title%%',
 				'title' => 'Pin it with Pinterest',
 			),
-			'linkedin'  => array(
+			'linkedin'   => array(
 				'link'  => 'https://www.linkedin.com/shareArticle?mini=true&url=%%url%%&title=%%title%%',
 				'title' => 'Share on Linkedin',
 			),
-			'tumblr'    => array(
+			'tumblr'     => array(
 				'link'            => 'https://tumblr.com/share?s=&v=3&t=%%title%%&u=%%url%%',
 				'title'           => 'Share on tumblr',
 				'default-display' => false,
 			),
-			'mail'      => array(
+			'mail'       => array(
 				'link'  => 'mailto:?subject=%%title%%&body=%%message%%:%20%%url%%',
 				'title' => 'Share by email',
+			),
+			'chatgpt'    => array(
+				'link'            => 'https://chatgpt.com/?q=%%prompt%%&hints=search',
+				'title'           => 'Ask ChatGPT about this',
+				'default-display' => false,
+			),
+			'claude'     => array(
+				'link'            => 'https://claude.ai/new?q=%%prompt%%',
+				'title'           => 'Ask Claude about this',
+				'default-display' => false,
+			),
+			'copilot'    => array(
+				'link'            => 'https://copilot.microsoft.com/?prompt=%%prompt%%',
+				'title'           => 'Copy prompt and open Copilot',
+				'default-display' => false,
+			),
+			'gemini'     => array(
+				'link'            => 'https://gemini.google.com/app?prompt=%%prompt%%',
+				'title'           => 'Copy prompt and open Gemini',
+				'default-display' => false,
+			),
+			'grok'       => array(
+				'link'            => 'https://grok.com/?q=%%prompt%%',
+				'title'           => 'Ask Grok about this',
+				'default-display' => false,
+			),
+			'perplexity' => array(
+				'link'            => 'https://www.perplexity.ai/search/new?q=%%prompt%%',
+				'title'           => 'Ask Perplexity about this',
+				'default-display' => false,
 			),
 		);
 	} elseif ( 'follow' === $context ) {
@@ -648,7 +690,7 @@ function synved_social_button_list_markup( $context, $vars = null, $buttons = nu
 	}
 
 	if ( false === isset( $vars['image'] ) ) {
-		$image_src = null;
+		$image_src = '';
 
 		if ( false === empty( $id ) ) {
 			$image_id = get_post_thumbnail_id( $id );
@@ -753,6 +795,22 @@ function synved_social_button_list_markup( $context, $vars = null, $buttons = nu
 		$params['hide'] = array_map( 'trim', $hide );
 	}
 
+	// Prompt handed to the AI assistant buttons.
+	if ( false === isset( $vars['prompt'] ) ) {
+		$prompt_parts = array_filter(
+			array(
+				esc_html__(
+					'Read this page and give me a short summary of the key points:',
+					'social-media-feather'
+				),
+				true === isset( $vars['title'] ) ? $vars['title'] : '',
+				true === isset( $vars['url'] ) ? $vars['url'] : '',
+			)
+		);
+
+		$vars['prompt'] = implode( ' ', $prompt_parts );
+	}
+
 	$vars   = apply_filters( 'synved_social_markup_variable_list', $vars, $context, $params );
 	$params = apply_filters( 'synved_social_markup_parameter_list', $params, $context, $vars );
 
@@ -763,16 +821,21 @@ function synved_social_button_list_markup( $context, $vars = null, $buttons = nu
 		// NOTE: urlencode_deep converts space characters to + rather than %20 which messes things up.
 		$vars['message'] = str_ireplace( '+', '%20', $vars['message'] );
 		$vars['title']   = str_ireplace( '+', '%20', $vars['title'] );
+		$vars['prompt']  = str_ireplace( '+', '%20', $vars['prompt'] );
 
 		// NOTE: urlencode_deep tries to be smart and apostrophes (') to %19 not %27 and double quotes (") to their equivalent open/closed counterparts which doesn't work on most social networks sharings.
 		$vars['message'] = str_ireplace( '%18', '%27', $vars['message'] );
 		$vars['title']   = str_ireplace( '%18', '%27', $vars['title'] );
+		$vars['prompt']  = str_ireplace( '%18', '%27', $vars['prompt'] );
 		$vars['message'] = str_ireplace( '%19', '%27', $vars['message'] );
 		$vars['title']   = str_ireplace( '%19', '%27', $vars['title'] );
+		$vars['prompt']  = str_ireplace( '%19', '%27', $vars['prompt'] );
 		$vars['message'] = str_ireplace( '%1c', '%22', $vars['message'] );
 		$vars['title']   = str_ireplace( '%1c', '%22', $vars['title'] );
+		$vars['prompt']  = str_ireplace( '%1c', '%22', $vars['prompt'] );
 		$vars['message'] = str_ireplace( '%1d', '%22', $vars['message'] );
 		$vars['title']   = str_ireplace( '%1d', '%22', $vars['title'] );
+		$vars['prompt']  = str_ireplace( '%1d', '%22', $vars['prompt'] );
 	}
 
 	$path = synved_social_path();

@@ -2,9 +2,9 @@
 Contributors: sharethis, socialmediafeather, scottstorebloom, scottmweaver
 Tags: social media, social sharing, social buttons, share buttons, follow buttons
 Requires at least: 5.9
-Tested up to: 7.0
-Stable tag: 2.2.4
-Version: 2.2.4
+Tested up to: 7.1
+Stable tag: 2.3.0
+Version: 2.3.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ Social Media Feather is a lightweight WordPress plugin that helps you add social
 
 You can automatically display social buttons on posts, pages, and custom post types, or insert them manually using widgets, shortcodes, or template tags.
 
-The plugin supports both sharing and follow features across major social networks. It also includes Retina-ready icons for high resolution displays.
+The plugin supports both sharing and follow features across major social networks, plus share buttons for AI assistants such as ChatGPT, Claude and Perplexity. It also includes Retina-ready icons for high resolution displays.
 
 = Why choose Social Media Feather? =
 
@@ -24,6 +24,7 @@ The plugin supports both sharing and follow features across major social network
 * Clean and modern icon styles
 * Easy setup with automatic or manual placement
 * Works with posts, pages, and custom post types
+* Optional AI assistant share buttons for ChatGPT, Claude, Copilot, Gemini, Grok, and Perplexity
 * Flexible customization with shortcodes and widgets
 
 = Sharing Features =
@@ -37,6 +38,23 @@ Allow visitors to share your content on:
 * Tumblr
 * LinkedIn
 * Email
+
+Or ask an AI assistant about your content:
+
+* ChatGPT
+* Claude
+* Copilot
+* Gemini
+* Grok
+* Perplexity
+
+= AI Assistant Sharing =
+
+The AI assistant buttons hand the visitor a prompt asking for a summary of the page, along with the post title and URL.
+
+ChatGPT, Claude, Grok, and Perplexity open a new chat with the prompt already filled in. Copilot and Gemini accept no prompt in a URL, so their buttons copy the prompt to the clipboard and open a blank chat for the visitor to paste into.
+
+All six are off by default. To turn one on, go to Settings > Social Media > Service Providers and set that provider's Service option to Share.
 
 = Follow Features =
 
@@ -82,6 +100,9 @@ Basic sharing buttons:
 
 Limit networks and order:
 `[feather_share show="twitter, facebook" hide="reddit, pinterest, linkedin, tumblr, mail"]`
+
+Only the AI assistant buttons (they must be enabled in settings first):
+`[feather_share show="chatgpt, claude, copilot, gemini, grok, perplexity" hide="facebook, twitter, reddit, pinterest, linkedin, tumblr, mail"]`
 
 Change icon skin:
 `[feather_share skin="wheel"]`
@@ -137,6 +158,14 @@ Use custom fields:
 * Disable follow: `synved_social_exclude_follow = yes`
 * Disable both: `synved_social_exclude = yes`
 
+= How do I turn on the AI assistant buttons? =
+
+They are off by default. Go to Settings > Social Media > Service Providers and set the Service option to Share for ChatGPT, Claude, Copilot, Gemini, Grok, or Perplexity.
+
+= Why does the Copilot or Gemini button not fill in the prompt? =
+
+Neither accepts a prompt in a URL, so those buttons copy the prompt to the clipboard and open a blank chat instead. The visitor pastes it into the chat box.
+
 = How do I show buttons only in a sidebar? =
 
 Disable automatic display in Settings > Social Media, then use widgets under Appearance > Widgets.
@@ -180,6 +209,12 @@ Example:
 5. Follow buttons example
 
 == Changelog ==
+
+= 2.3.0 =
+* Add AI assistant share buttons: ChatGPT, Claude, Copilot, Gemini, Grok, Perplexity.
+* ChatGPT, Claude, Grok and Perplexity open a chat prefilled with a prompt about the page.
+* Copilot and Gemini copy the prompt to the clipboard, since neither accepts a prompt in a URL.
+* Fix a PHP 8 deprecation notice on posts with no image.
 
 = 2.2.4 =
 * Test wp ver 7.

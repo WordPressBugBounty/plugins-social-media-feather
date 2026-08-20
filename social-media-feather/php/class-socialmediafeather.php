@@ -451,6 +451,54 @@ class SocialMediaFeather {
 					'block',
 				),
 			),
+			'chatgpt_display'               => array(
+				'type'      => 'string',
+				'sanitizer' => 'in_array',
+				'options'   => array(
+					'none',
+					'share',
+				),
+			),
+			'chatgpt_share_link'            => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_url',
+			),
+			'chatgpt_share_title'           => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_html',
+			),
+			'claude_display'                => array(
+				'type'      => 'string',
+				'sanitizer' => 'in_array',
+				'options'   => array(
+					'none',
+					'share',
+				),
+			),
+			'claude_share_link'             => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_url',
+			),
+			'claude_share_title'            => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_html',
+			),
+			'copilot_display'               => array(
+				'type'      => 'string',
+				'sanitizer' => 'in_array',
+				'options'   => array(
+					'none',
+					'share',
+				),
+			),
+			'copilot_share_link'            => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_url',
+			),
+			'copilot_share_title'           => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_html',
+			),
 			'facebook_display'              => array(
 				'type'      => 'string',
 				'sanitizer' => 'in_array',
@@ -510,6 +558,38 @@ class SocialMediaFeather {
 				'sanitizer' => 'esc_url',
 			),
 			'foursquare_follow_title'       => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_html',
+			),
+			'gemini_display'                => array(
+				'type'      => 'string',
+				'sanitizer' => 'in_array',
+				'options'   => array(
+					'none',
+					'share',
+				),
+			),
+			'gemini_share_link'             => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_url',
+			),
+			'gemini_share_title'            => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_html',
+			),
+			'grok_display'                  => array(
+				'type'      => 'string',
+				'sanitizer' => 'in_array',
+				'options'   => array(
+					'none',
+					'share',
+				),
+			),
+			'grok_share_link'               => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_url',
+			),
+			'grok_share_title'              => array(
 				'type'      => 'string',
 				'sanitizer' => 'esc_html',
 			),
@@ -617,6 +697,22 @@ class SocialMediaFeather {
 				'sanitizer' => 'esc_url',
 			),
 			'mail_share_title'              => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_html',
+			),
+			'perplexity_display'            => array(
+				'type'      => 'string',
+				'sanitizer' => 'in_array',
+				'options'   => array(
+					'none',
+					'share',
+				),
+			),
+			'perplexity_share_link'         => array(
+				'type'      => 'string',
+				'sanitizer' => 'esc_url',
+			),
+			'perplexity_share_title'        => array(
 				'type'      => 'string',
 				'sanitizer' => 'esc_html',
 			),
